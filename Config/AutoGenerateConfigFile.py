@@ -6,10 +6,10 @@
 import os
 import json
 
-config_path = 'c:/MoDeng/'
+config_path = '~/.MoDeng/config/'
 data_source_url = config_path+'data_source.json'
 stk_config_url = config_path+'stk_config.json'
-data_dir = config_path + 'data/'
+data_dir = '~/.MoDeng/data/'
 
 def checkConfigFile():
 
@@ -47,6 +47,7 @@ def checkConfigFile():
             json.dump(json_dict, f)
             configReadyFlag = False
 
+    os.popen('explorer {}'.format(config_path))
     if not configReadyFlag:
         print(
             '\n\n' +
